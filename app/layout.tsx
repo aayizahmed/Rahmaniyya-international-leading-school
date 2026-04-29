@@ -19,10 +19,6 @@ export const metadata: Metadata = {
   description: "Where Knowledge Meets Character. CBSE · Moral Studies · Leadership · Excellence.",
 };
 
-export const viewport = {
-  width: 1024,
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
