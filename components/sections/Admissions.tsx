@@ -14,7 +14,7 @@ export default function Admissions() {
       {/* Pattern Overlay */}
       <div className="absolute inset-0 bg-pattern-islamic-gold opacity-[0.05] pointer-events-none z-10" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
+      <div className="max-w-[1200px] mx-auto px-4 relative z-20 text-center">
         <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
 
         <motion.div

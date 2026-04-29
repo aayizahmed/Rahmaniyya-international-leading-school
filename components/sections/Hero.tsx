@@ -20,7 +20,7 @@ export default function Hero() {
       {/* Gradient Overlay for Depth and Readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0A1A14]/80 via-transparent to-[#0A1A14] z-0" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 h-full flex flex-col justify-center pt-20 lg:pt-24">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 h-full flex flex-col justify-center pt-20 lg:pt-24">
         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -42,7 +42,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Strong Headline */}
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-bg-light leading-[1.1] tracking-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-bg-light leading-[1.1] tracking-tight mb-6">
             Where Academic Excellence <br />
             Meets <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-[#F3E5AB]">Values & Leadership</span>
           </h1>

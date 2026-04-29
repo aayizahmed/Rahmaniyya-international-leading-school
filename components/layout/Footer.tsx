@@ -11,7 +11,7 @@ export default function Footer() {
       {/* Background pattern */}
       <div className="bg-pattern-islamic-gold pointer-events-none absolute inset-0 opacity-20" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 relative z-10">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           

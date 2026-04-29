@@ -61,7 +61,7 @@ export default function CampusGallery() {
   return (
     <section id="gallery" className="py-24 bg-white overflow-hidden">
       {/* Header */}
-      <div className="max-w-4xl mx-auto px-4 md:px-8 text-center mb-14">
+      <div className="max-w-[1200px] mx-auto px-4 text-center mb-14">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

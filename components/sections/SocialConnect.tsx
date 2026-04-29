@@ -30,7 +30,7 @@ export default function SocialConnect() {
       {/* Background abstract layout */}
       <div className="absolute top-0 right-0 w-1/3 h-[500px] bg-gradient-to-bl from-gold/10 to-transparent blur-[80px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 relative z-10">
         
         <div className="text-center md:text-left mb-16 flex flex-col md:flex-row justify-between items-end gap-8">
            <motion.div

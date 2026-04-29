@@ -30,7 +30,7 @@ export default function Results() {
   return (
     <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#F7F3E8] to-transparent pointer-events-none" />
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-4 mb-4">
             <span className="h-px w-10 bg-gold" />
@@ -45,7 +45,7 @@ export default function Results() {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-3 mb-16">
+        <div className="flex overflow-x-auto pb-8 lg:grid lg:grid-cols-3 gap-6 lg:gap-8 mb-16 snap-x snap-mandatory hide-scrollbar">
           {highlights.map((item, idx) => (
             <motion.div
               key={idx}
@@ -53,10 +53,10 @@ export default function Results() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="relative group h-[400px] rounded-[2.5rem] overflow-hidden cursor-pointer"
+              className="relative group h-[450px] lg:h-[400px] w-[85%] md:w-[45%] lg:w-full shrink-0 snap-center rounded-[2.5rem] overflow-hidden cursor-pointer"
             >
-              {/* Normal State Card */}
-              <div className="absolute inset-0 bg-bg-light border border-sand-dark/10 p-10 flex flex-col transition-all duration-500 group-hover:opacity-0 group-hover:scale-95 group-hover:-translate-y-4">
+              {/* Normal State Card (Desktop only or hidden on mobile) */}
+              <div className="absolute inset-0 bg-bg-light border border-sand-dark/10 p-10 flex flex-col transition-all duration-500 lg:group-hover:opacity-0 lg:group-hover:scale-95 lg:group-hover:-translate-y-4 opacity-0 lg:opacity-100 pointer-events-none lg:pointer-events-auto">
                 <div className="flex items-center justify-center w-16 h-16 rounded-3xl bg-gold/10 text-gold mb-6">
                   {idx === 0 ? <BarChart3 className="w-7 h-7" /> : idx === 1 ? <Trophy className="w-7 h-7" /> : <Sparkles className="w-7 h-7" />}
                 </div>
@@ -65,8 +65,8 @@ export default function Results() {
                 <p className="text-primary/70 leading-relaxed">{item.description}</p>
               </div>
 
-              {/* Hover State: The "Pop-Up" Image Card */}
-              <div className="absolute inset-0 opacity-0 scale-110 translate-y-8 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-all duration-500 ease-out z-20">
+              {/* Image State: Visible by default on mobile, hover reveal on desktop */}
+              <div className="absolute inset-0 opacity-100 lg:opacity-0 lg:scale-110 lg:translate-y-8 lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:translate-y-0 transition-all duration-500 ease-out z-20">
                  <div className="absolute inset-0 bg-primary/40 mix-blend-multiply z-10" />
                  <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent z-10" />
                  <img src={item.image} alt={item.title} className="w-full h-full object-cover" />

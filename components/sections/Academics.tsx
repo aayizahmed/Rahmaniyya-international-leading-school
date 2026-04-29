@@ -61,7 +61,7 @@ export default function Academics() {
       {/* Subtle Noise Texture */}
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.02] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 relative z-10">
         
         <div className="text-center md:text-left mb-20 flex flex-col md:flex-row justify-between items-end gap-8">
           <motion.div 
@@ -93,7 +93,7 @@ export default function Academics() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((prog, index) => (
             <motion.div 
               key={index}
@@ -111,7 +111,7 @@ export default function Academics() {
                 glareEnable={false}
                 className="h-full"
               >
-                <div className="relative h-[550px] w-full rounded-2xl overflow-hidden group cursor-pointer border border-[#FAF7F2]/10 bg-[#0A1A14]">
+                <div className="relative h-[450px] lg:h-[550px] w-full rounded-2xl overflow-hidden group cursor-pointer border border-[#FAF7F2]/10 bg-[#0A1A14]">
                   
                   {/* Background Image with slight scale on hover */}
                   <div className="absolute inset-0">

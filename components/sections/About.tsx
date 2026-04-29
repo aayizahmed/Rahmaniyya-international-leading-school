@@ -30,7 +30,7 @@ export default function About() {
       <div className="absolute left-[8%] top-0 bottom-0 w-[1px] bg-sand-dark/10 pointer-events-none" />
       <div className="absolute left-[50%] top-0 bottom-0 w-[1px] bg-sand-dark/10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-[1200px] mx-auto px-4">
         <div className="flex flex-col lg:flex-row relative">
           
           {/* Left Pinned Sticky Content */}
