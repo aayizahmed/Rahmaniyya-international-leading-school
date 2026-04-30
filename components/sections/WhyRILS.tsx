@@ -54,7 +54,7 @@ export default function WhyRILS() {
               <span className="text-gold font-medium uppercase tracking-widest text-sm">The Distinctions</span>
             </div>
             <h2 className="font-serif text-5xl md:text-6xl font-bold text-primary leading-tight">
-              Why Choose Rahmaniyya <br />
+              Why Choose RILS <br />
               <span className="italic font-light">for Your Child's Future</span>
             </h2>
            </motion.div>
