@@ -38,14 +38,14 @@ const usps = [
 
 export default function WhyRILS() {
   return (
-    <section className="py-32 bg-sand relative border-b border-sand-dark/20 overflow-hidden">
+    <section className="py-20 bg-sand relative border-b border-sand-dark/20 overflow-hidden">
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white rounded-full blur-[100px] opacity-70 pointer-events-none" />
       <div className="max-w-[1200px] mx-auto px-4 relative z-10">
         
-        <div className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+        <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
            <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
            >
@@ -53,7 +53,7 @@ export default function WhyRILS() {
               <div className="h-[1px] w-12 bg-gold" />
               <span className="text-gold font-medium uppercase tracking-widest text-sm">The Distinctions</span>
             </div>
-            <h2 className="font-serif text-5xl md:text-6xl font-bold text-primary leading-tight">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary leading-tight">
               Why Choose RILS <br />
               <span className="italic font-light">for Your Child's Future</span>
             </h2>

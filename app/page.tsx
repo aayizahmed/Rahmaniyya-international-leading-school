@@ -7,7 +7,7 @@ import Academics from "@/components/sections/Academics";
 import WhyRILS from "@/components/sections/WhyRILS";
 import Process from "@/components/sections/Process";
 import Results from "@/components/sections/Results";
-import Admissions from "@/components/sections/Admissions";
+import NewsSection from "@/components/sections/NewsSection";
 import CampusGallery from "@/components/sections/CampusGallery";
 import SocialConnect from "@/components/sections/SocialConnect";
 import Contact from "@/components/sections/Contact";
@@ -30,7 +30,7 @@ export default function Home() {
       <Process />
       <WhyRILS />
       <Results />
-      <Admissions />
+      <NewsSection />
       <CampusGallery />
       <SocialConnect />
       <Contact />
