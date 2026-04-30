@@ -61,46 +61,47 @@ export default function CampusGallery() {
   return (
     <section id="gallery" className="py-24 bg-white overflow-hidden">
       {/* Header */}
-      <div className="max-w-[1200px] mx-auto px-4 text-center mb-14">
+      <div className="max-w-[1200px] mx-auto px-4 text-center mb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center mb-6"
         >
-          <span className="px-6 py-2 border border-primary/30 rounded-full text-primary text-sm font-medium tracking-wide bg-white shadow-sm">
-            Our Gallery
-          </span>
+          <h2 className="font-serif text-5xl md:text-7xl font-bold text-primary mb-6">
+            Rahmaniyya <span className="font-script text-gold block md:inline mt-2 md:mt-0 italic font-light">Gallery</span>
+          </h2>
+          <p className="text-primary/60 font-sans max-w-2xl mx-auto text-lg leading-relaxed">
+            From mentorship and immersive learning to hands-on practice and real-world exposure — every step is designed to shape confident, future-ready achievers.
+          </p>
         </motion.div>
-
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-5"
-        >
-          Rahmaniyya <span className="text-gold">Gallery</span>
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-primary/60 font-sans max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
-        >
-          From mentorship and immersive learning to hands-on practice and
-          real-world exposure — every step is designed to shape confident,
-          future-ready achievers.
-        </motion.p>
       </div>
 
-      {/* Two marquee rows */}
-      <div className="flex flex-col gap-4">
-        <MarqueeRow images={row1} />
-        <MarqueeRow images={row2} reverse />
+      {/* Masonry-style Grid */}
+      <div className="max-w-[1400px] mx-auto px-4">
+        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+          {galleryImages.map((img, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.05 }}
+              className="relative group rounded-3xl overflow-hidden shadow-lg"
+            >
+              <img
+                src={img}
+                alt={`Gallery ${idx + 1}`}
+                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
+                  <div className="w-2 h-2 rounded-full bg-gold" />
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

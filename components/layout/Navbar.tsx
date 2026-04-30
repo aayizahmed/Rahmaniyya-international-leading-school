@@ -80,7 +80,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <Link
               href="#admissions"
-              className="bg-gold hover:bg-gold/90 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg inline-block"
+              className="bg-[#D4AF37] hover:bg-[#C9973A] text-white px-6 py-3 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-xl inline-block uppercase tracking-wider"
             >
               Apply Now 2026–27
             </Link>
