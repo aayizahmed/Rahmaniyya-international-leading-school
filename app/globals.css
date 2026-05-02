@@ -42,13 +42,14 @@
 
 /* Marquee utility classes */
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee var(--marquee-duration, 30s) linear infinite;
 }
 .animate-marquee-reverse {
-  animation: marquee-reverse 30s linear infinite;
+  animation: marquee-reverse var(--marquee-duration, 30s) linear infinite;
 }
-.animate-marquee:hover,
-.animate-marquee-reverse:hover {
+/* Pause on hover of the parent overflow wrapper */
+.overflow-hidden:hover .animate-marquee,
+.overflow-hidden:hover .animate-marquee-reverse {
   animation-play-state: paused;
 }
 

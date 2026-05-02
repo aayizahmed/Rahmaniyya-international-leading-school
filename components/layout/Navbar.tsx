@@ -6,12 +6,12 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Academics", href: "#academics" },
-  { name: "Admissions", href: "#admissions" },
-  { name: "Gallery", href: "#gallery" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/#home" },
+  { name: "About", href: "/#about" },
+  { name: "Academics", href: "/#academics" },
+  { name: "Activities", href: "/#gallery" },
+  { name: "Gallery", href: "/#gallery" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -79,7 +79,7 @@ export default function Navbar() {
           {/* CTA Desktop */}
           <div className="hidden md:block">
             <Link
-              href="#admissions"
+              href="/#contact"
               className="bg-[#D4AF37] hover:bg-[#C9973A] text-white px-6 py-3 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-xl inline-block uppercase tracking-wider"
             >
               Apply Now 2026–27
@@ -138,7 +138,7 @@ export default function Navbar() {
                 className="w-full max-w-xs pt-8 border-t border-gold/30 flex justify-center"
               >
                 <Link
-                  href="#admissions"
+                  href="/#contact"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="bg-gold text-white w-full py-4 text-center rounded-full text-lg font-medium shadow-xl hover:bg-white hover:text-primary transition-all duration-300"
                 >

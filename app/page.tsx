@@ -5,6 +5,7 @@ import StatsStrip from "@/components/sections/StatsStrip";
 import About from "@/components/sections/About";
 import Academics from "@/components/sections/Academics";
 import WhyRILS from "@/components/sections/WhyRILS";
+import VideoPreview from "@/components/sections/VideoPreview";
 import Process from "@/components/sections/Process";
 import Results from "@/components/sections/Results";
 import NewsSection from "@/components/sections/NewsSection";
@@ -29,6 +30,7 @@ export default function Home() {
       <Academics />
       <Process />
       <WhyRILS />
+      <VideoPreview />
       <Results />
       <NewsSection />
       <CampusGallery />

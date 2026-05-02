@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 export default function SplashScreen() {
-  const [isVisible, setIsVisible] = useState(true);
+  // Check sessionStorage immediately so we never flash the splash on return visits
+  const [isVisible, setIsVisible] = useState(false);
 
   // Mouse interactivity
   const mouseX = useMotionValue(0);
@@ -21,14 +22,22 @@ export default function SplashScreen() {
   const bgY = useTransform(springY, (val) => val * 0.1);
 
   useEffect(() => {
-    // Disable scrolling while splash screen is visible
+    // Only show splash once per browser session
+    const alreadySeen = sessionStorage.getItem("rils_splash_seen");
+    if (alreadySeen) {
+      // Skip splash entirely — user is returning from another page
+      return;
+    }
+
+    // First visit: mark as seen and show the splash
+    sessionStorage.setItem("rils_splash_seen", "1");
+    setIsVisible(true);
     document.body.style.overflow = "hidden";
-    
-    // Hide splash screen after sequence finishes
+
     const timer = setTimeout(() => {
       setIsVisible(false);
       document.body.style.overflow = "unset";
-    }, 3200); // Extended slightly for elegant finish
+    }, 3200);
 
     return () => {
       clearTimeout(timer);

@@ -19,35 +19,46 @@ const galleryImages = [
   "/images/lab.jpg",
 ];
 
-// Split evenly across two rows, duplicate for seamless loop
+// Split into two rows and triple-duplicate for seamless infinite loop
 const half = Math.ceil(galleryImages.length / 2);
-const row1 = [...galleryImages.slice(0, half), ...galleryImages.slice(0, half)];
-const row2 = [...galleryImages.slice(half),    ...galleryImages.slice(half)];
+const row1Images = galleryImages.slice(0, half);
+const row2Images = galleryImages.slice(half);
+
+// Triple-duplicate so there's always content visible during scroll
+const row1 = [...row1Images, ...row1Images, ...row1Images];
+const row2 = [...row2Images, ...row2Images, ...row2Images];
 
 function MarqueeRow({
   images,
   reverse = false,
+  speed = 35,
 }: {
   images: string[];
   reverse?: boolean;
+  speed?: number;
 }) {
   return (
     <div className="relative overflow-hidden w-full">
+      {/* Fade edges */}
+      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
       <div
-        className={`flex gap-4 ${
-          reverse ? "animate-marquee-reverse" : "animate-marquee"
-        }`}
-        style={{ width: "max-content" }}
+        className={`flex gap-4 ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}
+        style={{
+          width: "max-content",
+          ["--marquee-duration" as string]: `${speed}s`,
+        }}
       >
         {images.map((img, idx) => (
           <div
             key={idx}
-            className="w-[260px] h-[180px] flex-shrink-0 rounded-2xl overflow-hidden shadow-md border border-black/5 group"
+            className="w-[280px] h-[190px] flex-shrink-0 rounded-2xl overflow-hidden shadow-lg border border-black/5 group cursor-pointer"
           >
             <img
               src={img}
-              alt={`Gallery ${idx + 1}`}
-              className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              alt={`Gallery ${(idx % (images.length / 3)) + 1}`}
+              className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
               loading="lazy"
             />
           </div>
@@ -61,15 +72,21 @@ export default function CampusGallery() {
   return (
     <section id="gallery" className="py-24 bg-white overflow-hidden">
       {/* Header */}
-      <div className="max-w-[1200px] mx-auto px-4 text-center mb-20">
+      <div className="max-w-[1200px] mx-auto px-4 text-center mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="h-[1px] w-12 bg-gold" />
+            <span className="text-gold font-medium uppercase tracking-widest text-sm">Campus Life</span>
+            <div className="h-[1px] w-12 bg-gold" />
+          </div>
           <h2 className="font-serif text-5xl md:text-7xl font-bold text-primary mb-6">
-            Rahmaniyya <span className="font-script text-gold block md:inline mt-2 md:mt-0 italic font-light">Gallery</span>
+            Rahmaniyya{" "}
+            <span className="italic font-light text-gold">Gallery</span>
           </h2>
           <p className="text-primary/60 font-sans max-w-2xl mx-auto text-lg leading-relaxed">
             From mentorship and immersive learning to hands-on practice and real-world exposure — every step is designed to shape confident, future-ready achievers.
@@ -77,32 +94,20 @@ export default function CampusGallery() {
         </motion.div>
       </div>
 
-      {/* Masonry-style Grid */}
-      <div className="max-w-[1400px] mx-auto px-4">
-        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
-          {galleryImages.map((img, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.05 }}
-              className="relative group rounded-3xl overflow-hidden shadow-lg"
-            >
-              <img
-                src={img}
-                alt={`Gallery ${idx + 1}`}
-                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
-                  <div className="w-2 h-2 rounded-full bg-gold" />
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+      {/* Two-Row Marquee Slideshow */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="flex flex-col gap-4"
+      >
+        {/* Row 1 — scrolls left */}
+        <MarqueeRow images={row1} reverse={false} speed={40} />
+
+        {/* Row 2 — scrolls right */}
+        <MarqueeRow images={row2} reverse={true} speed={35} />
+      </motion.div>
     </section>
   );
 }
