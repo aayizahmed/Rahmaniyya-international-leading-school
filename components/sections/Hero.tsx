@@ -80,24 +80,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Persistent Floating Contact Icons */}
-      <div className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-30">
-        <a 
-          href="tel:+919605270250" 
-          className="w-14 h-14 md:w-16 md:h-16 bg-[#2B59FF] hover:bg-blue-600 rounded-full flex items-center justify-center shadow-2xl text-white transition-transform hover:scale-110"
-        >
-          <Phone className="w-7 h-7 md:w-8 md:h-8" />
-        </a>
-        <a 
-          href="https://wa.me/919605270250" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="w-14 h-14 md:w-16 md:h-16 bg-[#25D366] hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl text-white transition-transform hover:scale-110"
-        >
-          <MessageCircle className="w-7 h-7 md:w-8 md:h-8" />
-        </a>
-      </div>
-
       {/* Scroll Indicator */}
       <motion.div 
         initial={{ opacity: 0 }}
