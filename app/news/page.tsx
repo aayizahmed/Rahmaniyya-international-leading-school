@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import NewsPage2 from "./NewsPage2";
 
@@ -59,7 +60,16 @@ function PullQuote({ children }: { children: string }) {
 function PhotoCaption({ src, alt, caption }: { src: string; alt: string; caption: string }) {
   return (
     <figure className="my-5">
-      <img src={src} alt={alt} className="w-full grayscale-[20%] contrast-[1.05]" />
+      <div className="relative w-full aspect-[16/10]">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          quality={75}
+          className="object-cover grayscale-[20%] contrast-[1.05]"
+        />
+      </div>
       <div className="h-[1px] bg-ink/30 mt-1 mb-1" />
       <figcaption className="text-[10px] text-ink/60 font-sans uppercase tracking-wider leading-snug">
         {caption}
@@ -394,7 +404,7 @@ export default function NewsPage() {
 
             {/* School logo box */}
             <div className="border-2 border-ink/30 p-4 flex flex-col items-center text-center">
-              <img src="/logo.webp" alt="RILS Logo" className="w-16 h-16 object-contain grayscale mb-3" />
+              <Image src="/logo.webp" alt="RILS Logo" width={64} height={64} quality={80} className="object-contain grayscale mb-3" />
               <p className="font-black text-ink text-sm uppercase tracking-wide" style={{ fontFamily: "'Georgia', serif" }}>
                 Rahmaniyya International Leading School
               </p>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Rocket, Target, Quote } from "lucide-react";
 import Tilt from "react-parallax-tilt";
+import Image from "next/image";
 
 export default function VisionMission() {
   const cards = [
@@ -24,10 +25,14 @@ export default function VisionMission() {
     <section id="process" className="py-32 relative overflow-hidden">
       {/* Dynamic Background Image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="/images/vision-bg.webp" 
-          alt="Background" 
-          className="w-full h-full object-cover grayscale opacity-20 filter blur-[2px]"
+        <Image
+          src="/images/vision-bg.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          quality={60}
+          className="object-cover grayscale opacity-20 blur-[2px]"
+          aria-hidden="true"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-bg-light via-bg-light/80 to-bg-light z-10" />
       </div>

@@ -1,25 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const journeySteps = [
   {
     id: 1,
     title: "Foundation of Faith",
     text: "Building character begins with our integrated Moral Studies and Madrasa framework, establishing a resilient mindset for a rapidly changing world.",
-    img: "/images/hall.webp"
+    img: "/images/hall.webp",
+    width: 800,
+    height: 600,
   },
   {
     id: 2,
     title: "Rigorous Discovery",
     text: "Students seamlessly transition into an advanced academic workflow, supported by Continuous and Comprehensive Evaluation to ensure mastery at every step.",
-    img: "/images/classroom.webp"
+    img: "/images/classroom.webp",
+    width: 800,
+    height: 600,
   },
   {
     id: 3,
     title: "Ultimate Mastery",
     text: "We don't just teach; we challenge. Cultivating leadership and an undeniable global prestige that prepares them to conquer any domain.",
-    img: "/images/campus.webp"
+    img: "/images/campus.webp",
+    width: 800,
+    height: 600,
   }
 ];
 
@@ -56,11 +63,14 @@ export default function About() {
             >
               {/* Image Side */}
               <div className="lg:w-1/2 w-full">
-                <div className="relative group rounded-3xl overflow-hidden shadow-2xl">
-                  <img 
-                    src={step.img} 
-                    alt={step.title} 
-                    className="w-full aspect-[4/3] object-cover transition-transform duration-[1.5s] group-hover:scale-105" 
+                <div className="relative group rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+                  <Image
+                    src={step.img}
+                    alt={step.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    quality={78}
+                    className="object-cover transition-transform duration-[1.5s] group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                 </div>

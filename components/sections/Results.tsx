@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Trophy, BarChart3, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 const highlights = [
   {
@@ -74,7 +75,14 @@ export default function Results() {
               <div className="absolute inset-0 opacity-0 scale-110 translate-y-8 group-hover:opacity-100 group-[.is-active]:opacity-100 group-hover:scale-100 group-[.is-active]:scale-100 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-all duration-500 ease-out z-20">
                  <div className="absolute inset-0 bg-primary/40 mix-blend-multiply z-10" />
                  <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent z-10" />
-                 <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                 <Image
+                   src={item.image}
+                   alt={item.title}
+                   fill
+                   sizes="(max-width: 1024px) 85vw, 33vw"
+                   quality={70}
+                   className="object-cover"
+                 />
                  
                  <div className="absolute inset-0 z-20 p-10 flex flex-col justify-end">
                     <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white mb-4">

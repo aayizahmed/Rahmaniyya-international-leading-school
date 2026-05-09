@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const Divider = () => (
   <div className="flex items-center gap-2 my-1">
@@ -74,7 +75,9 @@ export default function NewsPage2() {
           <Divider />
 
           <figure className="my-5">
-            <img src="/images/classroom.webp" alt="RILS Classroom" className="w-full grayscale-[20%] contrast-[1.05]" />
+            <div className="relative w-full aspect-[16/10]">
+              <Image src="/images/classroom.webp" alt="Students in an RILS classroom" fill sizes="(max-width: 768px) 100vw, 50vw" quality={72} className="object-cover grayscale-[20%] contrast-[1.05]" />
+            </div>
             <div className="h-[1px] bg-ink/30 mt-1 mb-1" />
             <figcaption className="text-[10px] text-ink/60 font-sans uppercase tracking-wider leading-snug">
               Students engaged in an interactive learning session at the RILS campus.
@@ -128,7 +131,9 @@ export default function NewsPage2() {
           </h3>
           <Divider />
           <figure className="my-4">
-            <img src="/images/lab.webp" alt="RILS Science Lab" className="w-full grayscale-[20%] contrast-[1.05]" />
+            <div className="relative w-full aspect-[16/10]">
+              <Image src="/images/lab.webp" alt="RILS science laboratory" fill sizes="(max-width: 768px) 100vw, 40vw" quality={72} className="object-cover grayscale-[20%] contrast-[1.05]" />
+            </div>
             <div className="h-[1px] bg-ink/30 mt-1 mb-1" />
             <figcaption className="text-[10px] text-ink/60 font-sans uppercase tracking-wider leading-snug">
               State-of-the-art facilities for hands-on learning.
@@ -183,7 +188,7 @@ export default function NewsPage2() {
           <Divider />
 
           <div className="border-2 border-ink/30 p-4 flex flex-col items-center text-center">
-            <img src="/logo.webp" alt="RILS Logo" className="w-14 h-14 object-contain grayscale mb-3" />
+            <Image src="/logo.webp" alt="RILS Logo" width={56} height={56} quality={80} className="object-contain grayscale mb-3" />
             <p className="font-black text-ink text-xs uppercase tracking-wide"
               style={{ fontFamily: "'Georgia', serif" }}>
               Rahmaniyya International Leading School

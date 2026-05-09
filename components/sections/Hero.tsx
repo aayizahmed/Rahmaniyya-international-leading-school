@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 function scrollToSection(id: string) {
   const el = document.getElementById(id);
@@ -16,10 +17,16 @@ export default function Hero() {
     <section id="home" className="relative h-screen w-full overflow-hidden bg-primary">
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="/images/hero-bg.webp" 
-          alt="RILS Graduation" 
-          className="w-full h-full object-cover filter brightness-[0.5] contrast-[1.1]"
+        {/* Next.js Image handles: AVIF/WebP serving, srcset, preloading, CLS prevention */}
+        <Image
+          src="/images/hero-bg.webp"
+          alt="RILS graduation ceremony"
+          fill
+          priority          // above-the-fold — preload immediately
+          fetchPriority="high"
+          quality={85}
+          sizes="100vw"
+          className="object-cover brightness-[0.5] contrast-[1.1]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-transparent to-primary/60 z-10" />
       </div>
@@ -48,7 +55,7 @@ export default function Hero() {
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white leading-[1.1] tracking-tight mb-8">
             Where Academic Excellence <br />
-            Meets <span className="text-gold">Values & Leadership</span>
+            Meets <span className="text-gold">Values &amp; Leadership</span>
           </h1>
 
           {/* Subheading */}

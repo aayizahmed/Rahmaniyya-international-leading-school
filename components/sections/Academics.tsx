@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { BookOpen, GraduationCap, Shield, HeartPulse, Cpu, Globe, MapPin, HeartHandshake, Users } from "lucide-react";
+import { BookOpen, Shield, HeartPulse, Cpu, HeartHandshake, Users } from "lucide-react";
 import Tilt from "react-parallax-tilt";
 import Link from "next/link";
+import Image from "next/image";
 
 const programs = [
   {
@@ -123,10 +124,13 @@ export default function Academics() {
                   {/* Background Image with slight scale on hover */}
                   <div className="absolute inset-0">
                     <div className="absolute inset-0 bg-primary/40 mix-blend-multiply z-10 transition-opacity duration-700 group-hover:opacity-60 group-[.is-active]:opacity-60" />
-                    <img 
-                      src={prog.image} 
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110 group-[.is-active]:scale-110 filter brightness-75" 
+                    <Image
+                      src={prog.image}
                       alt={prog.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      quality={72}
+                      className="object-cover brightness-75 transition-transform duration-[1.5s] group-hover:scale-110 group-[.is-active]:scale-110"
                     />
                   </div>
                   

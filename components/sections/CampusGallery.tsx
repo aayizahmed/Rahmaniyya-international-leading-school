@@ -57,9 +57,12 @@ function MarqueeRow({
           >
             <img
               src={img}
-              alt={`Gallery ${(idx % (images.length / 3)) + 1}`}
-              className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+              alt={`RILS campus — photo ${(idx % (images.length / 3)) + 1}`}
+              width={280}
+              height={190}
+              decoding="async"
               loading="lazy"
+              className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
             />
           </div>
         ))}
