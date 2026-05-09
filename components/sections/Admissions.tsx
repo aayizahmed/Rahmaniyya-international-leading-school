@@ -45,7 +45,7 @@ export default function Admissions() {
             </h2>
 
             <Link 
-              href="#contact" 
+              href="https://wa.me/919605270250" target="_blank" rel="noopener noreferrer"
               className="group flex items-center gap-3 bg-gold hover:bg-[#F3E5AB] text-[#061A14] px-10 py-5 rounded-2xl font-bold transition-all hover:scale-105 shadow-xl"
             >
               Apply Now

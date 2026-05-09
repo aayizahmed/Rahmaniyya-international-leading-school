@@ -79,7 +79,7 @@ export default function Navbar() {
           {/* CTA Desktop */}
           <div className="hidden md:block">
             <Link
-              href="/#contact"
+              href="https://wa.me/919605270250" target="_blank" rel="noopener noreferrer"
               className="bg-[#D4AF37] hover:bg-[#C9973A] text-white px-6 py-3 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-xl inline-block uppercase tracking-wider"
             >
               Apply Now 2026–27
@@ -138,7 +138,7 @@ export default function Navbar() {
                 className="w-full max-w-xs pt-8 border-t border-gold/30 flex justify-center"
               >
                 <Link
-                  href="/#contact"
+                  href="https://wa.me/919605270250" target="_blank" rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="bg-gold text-white w-full py-4 text-center rounded-full text-lg font-medium shadow-xl hover:bg-white hover:text-primary transition-all duration-300"
                 >

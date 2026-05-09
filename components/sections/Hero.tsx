@@ -62,7 +62,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-6"
           >
             <Link 
-              href="#contact" 
+              href="https://wa.me/919605270250" target="_blank" rel="noopener noreferrer"
               className="group bg-gold hover:bg-gold/90 text-primary px-10 py-5 rounded-2xl font-bold transition-all hover:scale-105 flex items-center justify-center gap-3 shadow-2xl"
             >
               Apply for Admission
