@@ -1,20 +1,23 @@
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import StatsStrip from "@/components/sections/StatsStrip";
-import About from "@/components/sections/About";
-import Academics from "@/components/sections/Academics";
-import WhyRILS from "@/components/sections/WhyRILS";
-import VideoPreview from "@/components/sections/VideoPreview";
-import Process from "@/components/sections/Process";
-import Results from "@/components/sections/Results";
-import NewsSection from "@/components/sections/NewsSection";
-import CampusGallery from "@/components/sections/CampusGallery";
-import SocialConnect from "@/components/sections/SocialConnect";
-import Contact from "@/components/sections/Contact";
-import ParticlesBackground from "@/components/ui/ParticlesBackground";
-import SplashScreen from "@/components/ui/SplashScreen";
+import dynamic from "next/dynamic";
 import { Phone, MessageCircle } from "lucide-react";
+
+const SplashScreen = dynamic(() => import("@/components/ui/SplashScreen"), { ssr: false });
+const ParticlesBackground = dynamic(() => import("@/components/ui/ParticlesBackground"), { ssr: false });
+const StatsStrip = dynamic(() => import("@/components/sections/StatsStrip"));
+const About = dynamic(() => import("@/components/sections/About"));
+const Academics = dynamic(() => import("@/components/sections/Academics"));
+const Process = dynamic(() => import("@/components/sections/Process"));
+const WhyRILS = dynamic(() => import("@/components/sections/WhyRILS"));
+const VideoPreview = dynamic(() => import("@/components/sections/VideoPreview"));
+const Results = dynamic(() => import("@/components/sections/Results"));
+const NewsSection = dynamic(() => import("@/components/sections/NewsSection"));
+const CampusGallery = dynamic(() => import("@/components/sections/CampusGallery"));
+const SocialConnect = dynamic(() => import("@/components/sections/SocialConnect"));
+const Contact = dynamic(() => import("@/components/sections/Contact"));
+const Footer = dynamic(() => import("@/components/layout/Footer"));
+
 
 export default function Home() {
   return (
