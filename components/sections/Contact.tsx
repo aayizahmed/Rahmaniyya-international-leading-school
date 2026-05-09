@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Send, Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -14,42 +14,63 @@ type FormData = {
   message: string;
 };
 
+// ── Sanitise: strip HTML tags to prevent XSS in email body ──
+function sanitise(value: string): string {
+  return value.replace(/<[^>]*>/g, "").trim();
+}
+
+// ── Client-side rate limit: max 3 submissions per 5 minutes ──
+const RATE_LIMIT = 3;
+const RATE_WINDOW_MS = 5 * 60 * 1000;
+
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error" | "rate-limited">("idle");
+
+  const submissionTimestamps = useRef<number[]>([]);
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
+    // ── Rate-limit check ──
+    const now = Date.now();
+    submissionTimestamps.current = submissionTimestamps.current.filter(
+      (t) => now - t < RATE_WINDOW_MS
+    );
+    if (submissionTimestamps.current.length >= RATE_LIMIT) {
+      setSubmitStatus("rate-limited");
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus("idle");
-    
+
     try {
-      // NOTE: Replace these with actual EmailJS keys!
-      // Service ID, Template ID, Public Key
       await emailjs.send(
-        "YOUR_SERVICE_ID", 
-        "YOUR_TEMPLATE_ID", 
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
         {
-          from_name: data.fullName,
-          from_email: data.email,
-          phone: data.phone,
-          class_applying: data.classApplying,
-          message: data.message,
-          to_email: "rileadingschool@gmail.com"
+          from_name: sanitise(data.fullName),
+          from_email: sanitise(data.email),
+          phone: sanitise(data.phone),
+          class_applying: sanitise(data.classApplying),
+          message: sanitise(data.message),
+          to_email: "rileadingschool@gmail.com",
         },
-        "YOUR_PUBLIC_KEY"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? ""
       );
-      
+
+      submissionTimestamps.current.push(Date.now());
       setSubmitStatus("success");
       reset();
-    } catch (error) {
-      console.error("Email send error:", error);
+    } catch {
+      // Do NOT log the full error — it may contain credentials or PII
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
   };
+
 
   return (
     <section id="contact" className="py-24 lg:py-32 bg-sand relative border-b border-gold/20">
@@ -225,16 +246,21 @@ export default function Contact() {
                    )}
                  </button>
 
-                 {submitStatus === "success" && (
-                   <div className="p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg text-sm text-center">
-                     Thank you! Your enquiry has been sent successfully. We will get back to you soon.
-                   </div>
-                 )}
-                 {submitStatus === "error" && (
-                   <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm text-center">
-                     There was an error sending your message. Please try again or call us directly.
-                   </div>
-                 )}
+                  {submitStatus === "success" && (
+                    <div role="alert" className="p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg text-sm text-center">
+                      Thank you! Your enquiry has been sent successfully. We will get back to you soon.
+                    </div>
+                  )}
+                  {submitStatus === "error" && (
+                    <div role="alert" className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm text-center">
+                      Something went wrong. Please try again or contact us directly via WhatsApp.
+                    </div>
+                  )}
+                  {submitStatus === "rate-limited" && (
+                    <div role="alert" className="p-4 bg-amber-50 border border-amber-200 text-amber-700 rounded-lg text-sm text-center">
+                      Too many submissions. Please wait a few minutes before trying again.
+                    </div>
+                  )}
 
                </form>
             </div>
