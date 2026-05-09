@@ -3,20 +3,20 @@
 import { motion } from "framer-motion";
 
 const galleryImages = [
-  "/images/gallery-1.jpg",
-  "/images/gallery-2.jpg",
-  "/images/gallery-3.jpg",
-  "/images/gallery-4.jpg",
-  "/images/gallery-5.jpg",
-  "/images/gallery-6.jpg",
-  "/images/gallery-7.jpg",
-  "/images/gallery-8.jpg",
-  "/images/gallery-9.jpg",
-  "/images/gallery-10.jpg",
-  "/images/campus.jpg",
-  "/images/classroom.jpg",
-  "/images/hall.jpg",
-  "/images/lab.jpg",
+  "/images/gallery-1.webp",
+  "/images/gallery-2.webp",
+  "/images/gallery-3.webp",
+  "/images/gallery-4.webp",
+  "/images/gallery-5.webp",
+  "/images/gallery-6.webp",
+  "/images/gallery-7.webp",
+  "/images/gallery-8.webp",
+  "/images/gallery-9.webp",
+  "/images/gallery-10.webp",
+  "/images/campus.webp",
+  "/images/classroom.webp",
+  "/images/hall.webp",
+  "/images/lab.webp",
 ];
 
 // Split into two rows and triple-duplicate for seamless infinite loop

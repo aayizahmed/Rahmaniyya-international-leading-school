@@ -9,19 +9,19 @@ const highlights = [
     title: "Board Excellence",
     value: "100%",
     description: "Our students consistently achieve 100% pass rates with top-tier Full A+ honors in board examinations.",
-    image: "/images/achievement-board.png"
+    image: "/images/achievement-board.webp"
   },
   {
     title: "Competitive Success",
     value: "644/720",
     description: "Extraordinary success in NEET 2024 and competitive coaching, paving the way for elite professional careers.",
-    image: "/images/achievement-neet.png"
+    image: "/images/achievement-neet.webp"
   },
   {
     title: "Moral Leadership",
     value: "Values First",
     description: "Nurturing leaders who excel in moral studies and institutional representation across the state.",
-    image: "/images/achievement-leadership.png"
+    image: "/images/achievement-leadership.webp"
   },
 ];
 

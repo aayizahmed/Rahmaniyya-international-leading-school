@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <div className="w-16 h-16 relative flex items-center justify-center">
-                <img src="/logo.png" alt="RILS Logo" className="w-full h-full object-contain drop-shadow-md" />
+                <img src="/logo.webp" alt="RILS Logo" className="w-full h-full object-contain drop-shadow-md" />
               </div>
               <div>
                 <h3 className="font-bold text-2xl text-gold">RILS</h3>

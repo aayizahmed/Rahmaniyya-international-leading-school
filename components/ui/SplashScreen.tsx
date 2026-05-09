@@ -98,7 +98,7 @@ export default function SplashScreen() {
               className="relative w-48 h-48 md:w-64 md:h-64 mb-8 flex items-center justify-center drop-shadow-2xl"
             >
               <img 
-                src="/logo.png" 
+                src="/logo.webp" 
                 alt="Rahmaniyya Logo" 
                 className="w-full h-full object-contain"
               />

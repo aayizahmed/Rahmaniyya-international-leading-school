@@ -89,7 +89,7 @@ export default function SocialConnect() {
                         {social.icon}
                       </div>
                       <div className="w-10 h-10 relative opacity-40 group-hover:opacity-100 transition-opacity duration-500">
-                        <img src="/logo.png" alt="RILS Logo" className="w-full h-full object-contain filter brightness-0 invert" />
+                        <img src="/logo.webp" alt="RILS Logo" className="w-full h-full object-contain filter brightness-0 invert" />
                       </div>
                     </div>
 

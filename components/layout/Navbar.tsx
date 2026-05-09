@@ -50,7 +50,7 @@ export default function Navbar() {
           <Link href="#home" className="flex items-center gap-3 relative z-50">
             {/* Logo */}
             <div className="w-12 h-12 md:w-14 md:h-14 relative flex items-center justify-center">
-              <img src="/logo.png" alt="RILS Logo" className="w-full h-full object-contain drop-shadow-md" />
+              <img src="/logo.webp" alt="RILS Logo" className="w-full h-full object-contain drop-shadow-md" />
             </div>
             <span
               className={`font-serif font-bold text-xl md:text-2xl transition-colors duration-300 ${

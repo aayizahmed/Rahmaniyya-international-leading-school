@@ -29,7 +29,7 @@ export default function Admissions() {
               whileInView={{ opacity: 1, scale: 1 }}
               className="w-20 h-20 mb-6 relative"
             >
-              <img src="/logo.png" alt="RILS Logo" className="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(201,151,58,0.3)]" />
+              <img src="/logo.webp" alt="RILS Logo" className="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(201,151,58,0.3)]" />
             </motion.div>
             <motion.span 
               initial={{ opacity: 0, scale: 0.9 }}

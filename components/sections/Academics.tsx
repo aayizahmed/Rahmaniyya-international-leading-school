@@ -11,39 +11,39 @@ const programs = [
     title: "Regular Schooling (Grade 8–10)",
     overview: "A balanced Kerala State Syllabus foundation that builds strong literacy, numeracy, and character through premium classroom coaching and guided mentorship.",
     icon: <BookOpen className="w-6 h-6" />,
-    image: "/images/classroom.jpg"
+    image: "/images/classroom.webp"
   },
 
   {
     title: "Civil Service Coaching",
     overview: "Foundation to advanced IAS coaching designed to sharpen reasoning, ethics, and exam strategy for ambitious civil service aspirants.",
     icon: <Shield className="w-6 h-6" />,
-    image: "/images/campus.jpg"
+    image: "/images/campus.webp"
   },
   {
     title: "NEET Coaching",
     overview: "High-impact medical entrance preparation with concept mastery, continuous mock practice, and personal performance reviews.",
     icon: <HeartPulse className="w-6 h-6" />,
-    image: "/images/gallery-8.jpg"
+    image: "/images/gallery-8.webp"
   },
   {
     title: "JEE / IIT Coaching",
     overview: "Engineering entrance training that balances advanced problem solving, speed, and accuracy to deliver top-tier competitive readiness.",
     icon: <Cpu className="w-6 h-6" />,
-    image: "/images/lab.jpg"
+    image: "/images/lab.webp"
   },
 
   {
     title: "Moral Studies & Madrasa Education",
     overview: "Integrated spiritual learning and ethical values that support academic growth, emotional resilience, and community leadership.",
     icon: <HeartHandshake className="w-6 h-6" />,
-    image: "/images/hall.jpg"
+    image: "/images/hall.webp"
   },
   {
     title: "Leadership & Personality Development",
     overview: "Personal excellence training for communication, discipline, confidence, and leadership across campus and beyond.",
     icon: <Users className="w-6 h-6" />,
-    image: "/images/gallery-9.jpg"
+    image: "/images/gallery-9.webp"
   }
 ];
 

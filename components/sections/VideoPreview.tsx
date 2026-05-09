@@ -16,7 +16,7 @@ import { Play, Volume2, VolumeX } from "lucide-react";
 */
 const VIDEO_SRC: string | null = null;         // e.g. "/campus-reel.mp4"
 const YOUTUBE_ID: string | null = null;        // e.g. "your-youtube-id"
-const FALLBACK_IMAGE = "/images/campus.jpg";   // used when no video is provided
+const FALLBACK_IMAGE = "/images/campus.webp";   // used when no video is provided
 
 export default function VideoPreview() {
   const videoRef = useRef<HTMLVideoElement>(null);

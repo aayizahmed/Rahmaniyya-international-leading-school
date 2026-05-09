@@ -7,19 +7,19 @@ const journeySteps = [
     id: 1,
     title: "Foundation of Faith",
     text: "Building character begins with our integrated Moral Studies and Madrasa framework, establishing a resilient mindset for a rapidly changing world.",
-    img: "/images/hall.jpg"
+    img: "/images/hall.webp"
   },
   {
     id: 2,
     title: "Rigorous Discovery",
     text: "Students seamlessly transition into an advanced academic workflow, supported by Continuous and Comprehensive Evaluation to ensure mastery at every step.",
-    img: "/images/classroom.jpg"
+    img: "/images/classroom.webp"
   },
   {
     id: 3,
     title: "Ultimate Mastery",
     text: "We don't just teach; we challenge. Cultivating leadership and an undeniable global prestige that prepares them to conquer any domain.",
-    img: "/images/campus.jpg"
+    img: "/images/campus.webp"
   }
 ];
 

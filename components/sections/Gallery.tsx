@@ -12,15 +12,15 @@ import "swiper/css/navigation";
 
 // Local images only
 const galleryImages = [
-  "/images/gallery-1.jpg",
-  "/images/gallery-2.jpg",
-  "/images/gallery-3.jpg",
-  "/images/gallery-4.jpg",
-  "/images/gallery-5.jpg",
-  "/images/campus.jpg",
-  "/images/classroom.jpg",
-  "/images/hall.jpg",
-  "/images/lab.jpg",
+  "/images/gallery-1.webp",
+  "/images/gallery-2.webp",
+  "/images/gallery-3.webp",
+  "/images/gallery-4.webp",
+  "/images/gallery-5.webp",
+  "/images/campus.webp",
+  "/images/classroom.webp",
+  "/images/hall.webp",
+  "/images/lab.webp",
 ];
 
 

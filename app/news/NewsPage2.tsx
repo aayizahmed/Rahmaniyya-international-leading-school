@@ -74,7 +74,7 @@ export default function NewsPage2() {
           <Divider />
 
           <figure className="my-5">
-            <img src="/images/classroom.jpg" alt="RILS Classroom" className="w-full grayscale-[20%] contrast-[1.05]" />
+            <img src="/images/classroom.webp" alt="RILS Classroom" className="w-full grayscale-[20%] contrast-[1.05]" />
             <div className="h-[1px] bg-ink/30 mt-1 mb-1" />
             <figcaption className="text-[10px] text-ink/60 font-sans uppercase tracking-wider leading-snug">
               Students engaged in an interactive learning session at the RILS campus.
@@ -128,7 +128,7 @@ export default function NewsPage2() {
           </h3>
           <Divider />
           <figure className="my-4">
-            <img src="/images/lab.jpg" alt="RILS Science Lab" className="w-full grayscale-[20%] contrast-[1.05]" />
+            <img src="/images/lab.webp" alt="RILS Science Lab" className="w-full grayscale-[20%] contrast-[1.05]" />
             <div className="h-[1px] bg-ink/30 mt-1 mb-1" />
             <figcaption className="text-[10px] text-ink/60 font-sans uppercase tracking-wider leading-snug">
               State-of-the-art facilities for hands-on learning.
@@ -183,7 +183,7 @@ export default function NewsPage2() {
           <Divider />
 
           <div className="border-2 border-ink/30 p-4 flex flex-col items-center text-center">
-            <img src="/logo.png" alt="RILS Logo" className="w-14 h-14 object-contain grayscale mb-3" />
+            <img src="/logo.webp" alt="RILS Logo" className="w-14 h-14 object-contain grayscale mb-3" />
             <p className="font-black text-ink text-xs uppercase tracking-wide"
               style={{ fontFamily: "'Georgia', serif" }}>
               Rahmaniyya International Leading School

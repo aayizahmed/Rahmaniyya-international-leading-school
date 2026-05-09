@@ -25,7 +25,7 @@ export default function VisionMission() {
       {/* Dynamic Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/images/vision-bg.jpg" 
+          src="/images/vision-bg.webp" 
           alt="Background" 
           className="w-full h-full object-cover grayscale opacity-20 filter blur-[2px]"
         />

@@ -258,7 +258,7 @@ export default function NewsPage() {
             <Divider />
 
             <PhotoCaption
-              src="/images/cultfest-1.jpg"
+              src="/images/cultfest-1.webp"
               alt="Students performing at Handala Arts Festival"
               caption="Students deliver a stirring group performance at the Handala Arts Festival 2024, held at the RILS main auditorium."
             />
@@ -280,7 +280,7 @@ export default function NewsPage() {
             </Body>
 
             <PhotoCaption
-              src="/images/cultfest-2.jpg"
+              src="/images/cultfest-2.webp"
               alt="Student at Handala mic"
               caption="A participant delivers a passionate speech during the public-speaking round of Handala 2024."
             />
@@ -305,7 +305,7 @@ export default function NewsPage() {
             <Divider />
 
             <PhotoCaption
-              src="/images/achievement-board.png"
+              src="/images/achievement-board.webp"
               alt="Board results celebration"
               caption="RILS students celebrate after the announcement of historic Kerala State Board results."
             />
@@ -394,7 +394,7 @@ export default function NewsPage() {
 
             {/* School logo box */}
             <div className="border-2 border-ink/30 p-4 flex flex-col items-center text-center">
-              <img src="/logo.png" alt="RILS Logo" className="w-16 h-16 object-contain grayscale mb-3" />
+              <img src="/logo.webp" alt="RILS Logo" className="w-16 h-16 object-contain grayscale mb-3" />
               <p className="font-black text-ink text-sm uppercase tracking-wide" style={{ fontFamily: "'Georgia', serif" }}>
                 Rahmaniyya International Leading School
               </p>

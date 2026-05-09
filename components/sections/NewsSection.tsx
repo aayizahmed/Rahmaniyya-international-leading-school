@@ -83,7 +83,7 @@ export default function NewsSection() {
                     {/* subtle Islamic pattern overlay */}
                     <div className="absolute inset-0 bg-pattern-islamic-gold opacity-[0.06] pointer-events-none" />
                     <img
-                      src="/logo.png"
+                      src="/logo.webp"
                       alt="RILS Logo"
                       className="relative z-10 w-36 h-36 object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700"
                     />

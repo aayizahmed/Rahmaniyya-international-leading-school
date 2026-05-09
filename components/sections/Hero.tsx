@@ -17,7 +17,7 @@ export default function Hero() {
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/images/hero-bg.jpg" 
+          src="/images/hero-bg.webp" 
           alt="RILS Graduation" 
           className="w-full h-full object-cover filter brightness-[0.5] contrast-[1.1]"
         />
