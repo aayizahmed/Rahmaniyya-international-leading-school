@@ -1,8 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Phone, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+
+function scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
 
 export default function Hero() {
   return (
@@ -61,13 +68,13 @@ export default function Hero() {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-6"
           >
-            <Link 
-              href="https://wa.me/919605270250" target="_blank" rel="noopener noreferrer"
+            <button 
+              onClick={() => scrollToSection("contact")}
               className="group bg-gold hover:bg-gold/90 text-primary px-10 py-5 rounded-2xl font-bold transition-all hover:scale-105 flex items-center justify-center gap-3 shadow-2xl"
             >
               Apply for Admission
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </Link>
+            </button>
             
             <Link 
               href="#academics" 
